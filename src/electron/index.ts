@@ -24,13 +24,14 @@ function createWindow() {
 
   if (isDev) {
     function loadDev() {
-      win.loadURL('http://localhost:4200/')
-      win.webContents.once('did-fail-load', loadDev)
+      setTimeout(() => {
+        win.loadURL('http://localhost:4200/')
+        win.webContents.once('did-fail-load', loadDev)
+        win.webContents.once('did-finish-load', () => {
+          win.webContents.openDevTools({ mode: 'detach' })
+        })
+      }, 2000)
     }
-    win.webContents.once('did-finish-load', () => {
-      win.webContents.off('did-fail-load', loadDev)
-      win.webContents.openDevTools({ mode: 'detach' })
-    })
     loadDev()
   } else {
     win.loadFile(path.join(__dirname, 'index.html'))
