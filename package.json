@@ -1,5 +1,6 @@
 {
   "name": "angular-electron-starter",
+  "productName": "AngularElectronStarter",
   "description": "The ultimate angular/electron starter kit.",
   "main": "dist/index.js",
   "version": "1.0.0",
