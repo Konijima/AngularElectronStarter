@@ -1,0 +1,13 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2015",
+    "outDir": "./dist",
+    "sourceMap": false,
+    "types": []
+  },
+  "files": ["src/electron/index.ts", "src/electron/preload.ts"],
+  "include": ["src/**/*.d.ts"]
+}

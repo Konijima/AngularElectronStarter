@@ -1,0 +1,65 @@
+{
+  "name": "angular-electron-starter",
+  "description": "The ultimate angular/electron starter kit.",
+  "main": "dist/index.js",
+  "version": "1.0.0",
+  "author": "Konijima",
+  "scripts": {
+    "serve": "concurrently \"ng serve\" \"npm run electron:watch\"",
+    "build": "ng build && npm run electron:build",
+    "test": "ng test",
+    "pack": "npm run build && npm run electron:pack",
+    "": "----------------------------------------------------------",
+    "electron:build": "tsc -p ./tsconfig.electron.json",
+    "electron:watch": "nodemon --watch src/electron --ext ** --exec \"npm run electron:build && npm run electron:dev\"",
+    "electron:start": "electron dist/index.js",
+    "electron:dev": "electron dist/index.js --dev",
+    "electron:pack": "electron-builder build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "private": true,
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.0.6",
+    "@angular/animations": "^14.0.0",
+    "@angular/cli": "~14.0.6",
+    "@angular/common": "^14.0.0",
+    "@angular/compiler": "^14.0.0",
+    "@angular/compiler-cli": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/forms": "^14.0.0",
+    "@angular/platform-browser": "^14.0.0",
+    "@angular/platform-browser-dynamic": "^14.0.0",
+    "@angular/router": "^14.0.0",
+    "@types/jasmine": "~4.0.0",
+    "concurrently": "^7.4.0",
+    "cpy": "^9.0.1",
+    "cpy-cli": "^4.2.0",
+    "electron": "^21.2.0",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.0.0",
+    "jasmine-core": "~4.1.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "typescript": "~4.7.2",
+    "zone.js": "~0.11.4"
+  },
+  "build": {
+    "asar": true,
+    "appId": "my.angular.electron",
+    "compression": "normal",
+    "removePackageScripts": true,
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "dist"
+    ]
+  }
+}
