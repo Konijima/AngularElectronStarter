@@ -4,6 +4,10 @@ The ultimate angular/electron starter kit.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
 
+## Using Electron-Builder
+
+Check [Electron Builder](https://www.electron.build/) website for more information.
+
 ## Development server
 
 Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
